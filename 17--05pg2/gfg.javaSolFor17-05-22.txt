@@ -1,0 +1,16 @@
+class Solution
+{
+    //Function to find the minimum element in sorted and rotated array.
+    static int minNumber(int arr[], int low, int high)
+    {
+        // Your code here
+       if(low == high)
+       return arr[low];
+       
+       int mid = (low + high)/2;
+       int m1= minNumber(arr,low,mid);
+       int m2 = minNumber(arr,mid+1,high);
+       
+       return Math.min(m1,m2);
+    }
+}
